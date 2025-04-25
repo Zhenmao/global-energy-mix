@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Energy Mix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <figure>
+        <figcaption
+          >Global primary energy mix is still dominated by
+          <span data-energy="non-renewables">non-renewables</span>, but
+          <span data-energy="renewables">renewables</span> are slowly on the
+          rise.</figcaption
+        >
+        <div class="wrapper" id="wrapper">
+          <svg class="chart" id="chart"></svg>
+          <div class="tooltip" data-tooltip="key" id="keyTooltip">
+            <div data-energy="hydro">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M17.2532 19.9167C19.8129 18.2147 21.5 15.3044 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C11.2744 2.5 10.5678 2.58134 9.88889 2.73541M17.2532 19.9167V17M17.2532 19.9167H20.5M6.72222 4.09975C4.17625 5.80396 2.5 8.70623 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5C12.7256 21.5 13.4322 21.4187 14.1111 21.2646M6.72222 4.09975V7M6.72222 4.09975H3.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 16C13.933 16 15.5 14.433 15.5 12.5C15.5 10 12 7 12 7C12 7 8.5 10 8.5 12.5C8.5 14.433 10.067 16 12 16Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Hydro
+            </div>
+            <div data-energy="wind">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 14L12 22"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M18 22H6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <circle
+                  cx="12"
+                  cy="12.5"
+                  r="1.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <ellipse
+                  cx="12"
+                  cy="5"
+                  rx="2"
+                  ry="3"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M17.2624 17.9508C15.8454 17.1373 15.1388 15.7164 15.6842 14.7771C16.2297 13.8377 17.8205 13.7357 19.2376 14.5492C20.6546 15.3627 21.3612 16.7836 20.8158 17.7229C20.2703 18.6623 18.6795 18.7643 17.2624 17.9508Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M6.73756 17.9508C8.1546 17.1373 8.86118 15.7164 8.31576 14.7771C7.77035 13.8377 6.17947 13.7357 4.76244 14.5492C3.3454 15.3627 2.63882 16.7836 3.18424 17.7229C3.72965 18.6623 5.32053 18.7643 6.73756 17.9508Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path d="M12 8V11" stroke="currentColor" stroke-width="1.5" />
+                <path
+                  d="M13 13L16 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M11 13L8 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M7.5 3C4.80989 4.5066 3 7.32255 3 10.5478C3 11.0426 3.0426 11.5277 3.12444 12M16.5 3C19.1901 4.5066 21 7.32255 21 10.5478C21 11.0426 20.9574 11.5277 20.8756 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Wind
+            </div>
+            <div data-energy="solar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M2 10C2.77968 6.18409 5.66918 3.12932 9.40618 2.08977C9.71987 2.00251 9.87671 1.95888 9.96119 2.05236C10.0457 2.14584 9.98344 2.30042 9.85897 2.60956L9 4.5M14 2C17.8159 2.77968 20.8707 5.66918 21.9102 9.40618C21.9975 9.71987 22.0411 9.87671 21.9476 9.96119C21.8542 10.0457 21.6996 9.98344 21.3904 9.85897L19.5 9M22 14C21.2203 17.8159 18.3308 20.8707 14.5938 21.9102C14.2801 21.9975 14.1233 22.0411 14.0388 21.9476C13.9543 21.8542 14.0166 21.6996 14.141 21.3904L15 19.5M10 22C6.18409 21.2203 3.12932 18.3308 2.08977 14.5938C2.00251 14.2801 1.95888 14.1233 2.05236 14.0388C2.14584 13.9543 2.30042 14.0166 2.60956 14.141L4.5 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M15 12C15 13.6569 13.6569 15 12 15M15 12C15 10.3431 13.6569 9 12 9M15 12H16.5M12 15C10.3431 15 9 13.6569 9 12M12 15V16.5M9 12C9 10.3431 10.3431 9 12 9M9 12L7.5 12M12 9V7.5M14.1213 9.87869L15.182 8.81803M9.87868 14.1213L8.81802 15.182M14.1213 14.1213L15.182 15.182M9.87868 9.87869L8.81802 8.81803"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              Solar
+            </div>
+            <div data-energy="biofuels">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M7.51691 12H3.8974C3.46866 12 3.25429 12 3.12182 12.1371C2.98934 12.2742 2.99444 12.4858 3.00462 12.9091C3.01499 13.34 3.03966 13.7692 3.09832 14.1975C3.12255 14.3744 3.13466 14.4628 3.1927 14.5082C3.25075 14.5536 3.35607 14.5413 3.56672 14.5167C4.73441 14.3801 5.86167 15.3326 5.86167 16.5839C5.86167 17.2074 5.59266 17.767 5.16638 18.1489C5.01046 18.2885 4.9325 18.3584 4.92694 18.4317C4.92138 18.505 4.97764 18.5735 5.09015 18.7106C5.49816 19.2075 5.9569 19.6597 6.45825 20.059C6.57718 20.1537 6.63664 20.2011 6.70196 20.1992C6.76728 20.1973 6.83399 20.1376 6.96741 20.0183C7.32763 19.6962 7.79991 19.5009 8.317 19.5009C9.42587 19.5009 10.3136 20.4293 10.3606 21.5054C10.3684 21.684 10.3723 21.7732 10.4156 21.8217C10.4589 21.8703 10.533 21.8813 10.6812 21.9035C11.5421 22.0322 12.4579 22.0322 13.3188 21.9035C13.467 21.8813 13.5411 21.8703 13.5844 21.8217C13.6277 21.7732 13.6316 21.684 13.6394 21.5054C13.6864 20.4293 14.5741 19.5009 15.683 19.5009C16.2001 19.5009 16.6724 19.6962 17.0326 20.0183C17.166 20.1376 17.2327 20.1973 17.298 20.1992C17.3634 20.2011 17.4228 20.1537 17.5417 20.059C18.0431 19.6597 18.5018 19.2075 18.9098 18.7106C19.0224 18.5735 19.0786 18.505 19.0731 18.4317C19.0675 18.3584 18.9895 18.2885 18.8336 18.1489C18.4073 17.767 18.1383 17.2074 18.1383 16.5839C18.1383 15.3326 19.2656 14.3801 20.4333 14.5167C20.6439 14.5413 20.7493 14.5536 20.8073 14.5082C20.8653 14.4628 20.8775 14.3744 20.9017 14.1975C20.9603 13.7692 20.985 13.34 20.9954 12.9091C21.0056 12.4858 21.0107 12.2742 20.8782 12.1371C20.7457 12 20.5313 12 20.1026 12H16.4831C16.2763 14.3363 14.3481 16.1671 12 16.1671C9.65187 16.1671 7.72366 14.3363 7.51691 12Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M7 12H17"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M12 12L12 6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M11.7412 7.7412C12.2899 6.20331 11.9672 4.44278 10.7622 3.2378C9.55722 2.03282 7.79669 1.71006 6.2588 2.2588C5.71007 3.79669 6.03282 5.55722 7.2378 6.7622C8.44278 7.96718 10.2033 8.28993 11.7412 7.7412Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M12.2157 9.78433C11.7584 8.50276 12.0274 7.03565 13.0315 6.0315C14.0356 5.02735 15.5028 4.75839 16.7843 5.21567C17.2416 6.49725 16.9726 7.96435 15.9685 8.9685C14.9644 9.97265 13.4972 10.2416 12.2157 9.78433Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              Biofuels
+            </div>
+            <div data-energy="other-renewables">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M2 10C2.77968 6.18409 5.66918 3.12932 9.40618 2.08977C9.71987 2.00251 9.87671 1.95888 9.96119 2.05236C10.0457 2.14584 9.98344 2.30042 9.85897 2.60956L9 4.5M14 2C17.8159 2.77968 20.8707 5.66918 21.9102 9.40618C21.9975 9.71987 22.0411 9.87671 21.9476 9.96119C21.8542 10.0457 21.6996 9.98344 21.3904 9.85897L19.5 9M22 14C21.2203 17.8159 18.3308 20.8707 14.5938 21.9102C14.2801 21.9975 14.1233 22.0411 14.0388 21.9476C13.9543 21.8542 14.0166 21.6996 14.141 21.3904L15 19.5M10 22C6.18409 21.2203 3.12932 18.3308 2.08977 14.5938C2.00251 14.2801 1.95888 14.1233 2.05236 14.0388C2.14584 13.9543 2.30042 14.0166 2.60956 14.141L4.5 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M8.61288 11.6647L12.112 7.17326C12.3857 6.82199 12.8986 7.04062 12.8986 7.50853V10.985C12.8986 11.2653 13.0998 11.4925 13.3479 11.4925H15.0498C15.4364 11.4925 15.6425 12.0074 15.3871 12.3353L11.888 16.8267C11.6143 17.178 11.1014 16.9594 11.1014 16.4915V13.015C11.1014 12.7347 10.9002 12.5075 10.6521 12.5075H8.95018C8.56356 12.5075 8.35747 11.9926 8.61288 11.6647Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Other renewables
+            </div>
+            <div data-energy="nuclear">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M14 12.5C14 13.6046 13.1046 14.5 12 14.5C10.8954 14.5 10 13.6046 10 12.5C10 11.3954 10.8954 10.5 12 10.5C13.1046 10.5 14 11.3954 14 12.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M14.9111 8.43439L15.8552 6.65198C16.5358 5.36682 16.8762 4.72424 16.5862 4.02175C16.2963 3.31926 15.7303 3.16307 14.5984 2.8507C13.7693 2.62192 12.8984 2.5 12 2.5C11.1016 2.5 10.2307 2.62192 9.40163 2.8507C8.26967 3.16307 7.70368 3.31926 7.41376 4.02175C7.12384 4.72424 7.46418 5.36682 8.14485 6.65198L9.08888 8.43439M16.9973 12.6649H19.0632C20.5386 12.6649 21.2763 12.6649 21.73 13.3019C22.1838 13.9388 22.0038 14.5449 21.6438 15.7571C21.1143 17.5399 20.1389 19.1197 18.853 20.3559C17.9893 21.1862 17.5575 21.6013 16.8282 21.4789C16.0989 21.3565 15.7574 20.7117 15.0743 19.4221L13.8658 17.1403M10.1342 17.1403L8.92566 19.4221C8.24263 20.7117 7.90112 21.3565 7.17181 21.4789C6.44249 21.6013 6.01067 21.1862 5.14702 20.3559C3.86105 19.1197 2.88572 17.5399 2.35623 15.7571C1.99622 14.5449 1.81621 13.9388 2.26995 13.3019C2.72369 12.6649 3.46138 12.6649 4.93677 12.6649H7.00267"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Nuclear
+            </div>
+            <div data-energy="gas">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M13.8561 22C26.0783 19 19.2338 7 10.9227 2C9.9453 5.5 8.47838 6.5 5.54497 10C1.66121 14.6339 3.5895 20 8.96719 22C8.1524 21 6.04958 18.9008 7.5 16C8 15 9 14 8.5 12C9.47778 12.5 11.5 13 12 15.5C12.8148 14.5 13.6604 12.4 12.8783 10C19 14.5 16.5 19 13.8561 22Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Gas
+            </div>
+            <div data-energy="coal">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M15.5 22L14.3835 16.9755C13.7962 14.3331 13.5 11.6344 13.5 8.92749C13.5 8.41525 13.0847 8 12.5725 8H7.42749C6.91525 8 6.5 8.41525 6.5 8.92749C6.5 11.6344 6.20375 14.3331 5.61655 16.9755L4.5 22"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M3 22H17"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17 2H13C11.3431 2 10 3.34315 10 5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 2H21"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13 5H19"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Coal
+            </div>
+            <div data-energy="oil">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <ellipse
+                  cx="12"
+                  cy="4"
+                  rx="8"
+                  ry="2"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M12 12.5C12.8284 12.5 13.5 11.8284 13.5 11C13.5 10 12 8.5 12 8.5C12 8.5 10.5 10 10.5 11C10.5 11.8284 11.1716 12.5 12 12.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M19 5V10.5465C19.6372 10.9771 20 11.4727 20 12C20 13.6569 16.4183 15 12 15C7.58172 15 4 13.6569 4 12C4 11.4727 4.36284 10.9771 5 10.5465V5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M19 13.5V17.5465C19.6372 17.9771 20 18.4727 20 19C20 20.6569 16.4183 22 12 22C7.58172 22 4 20.6569 4 19C4 18.4727 4.36284 17.9771 5 17.5465V13.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Oil
+            </div>
+          </div>
+          <div class="tooltip" data-tooltip="value" id="valueTooltip">
+            <div data-energy="hydro"></div>
+            <div data-energy="wind"></div>
+            <div data-energy="solar"></div>
+            <div data-energy="biofuels"></div>
+            <div data-energy="other-renewables"></div>
+            <div data-energy="nuclear"></div>
+            <div data-energy="gas"></div>
+            <div data-energy="coal"></div>
+            <div data-energy="oil"></div>
+          </div>
+        </div>
+      </figure>
+      <footer>
+        <p
+          >This is a remake of Beautiful News
+          <a
+            href="https://informationisbeautiful.net/beautifulnews/455-california-energy-mix/"
+            target="_blank"
+            >California Energy Mix</a
+          >
+          with world energy mix data.</p
+        >
+        <p
+          >Data sources:
+          <a
+            href="https://www.energyinst.org/statistical-review/"
+            target="_blank"
+            >Energy Institute - Statistical Review of World Energy (2024)</a
+          >
+          – with major processing by
+          <a href="https://ourworldindata.org/">Our World in Data</a></p
+        >
+      </footer>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
