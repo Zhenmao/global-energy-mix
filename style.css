@@ -54,7 +54,7 @@ body {
   font-family: "Asap Condensed", sans-serif;
   font-size: var(--font-size-body);
   font-weight: 400;
-  font-variant-numeric: tabular-nums, lining-nums;
+  font-variant-numeric: tabular-nums lining-nums;
   color: var(--color-text);
   background-color: var(--color-background);
   line-height: 1.5;
